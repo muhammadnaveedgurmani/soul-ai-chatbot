@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUL — AI Knowledge Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="app-wrapper">
+
+        <!-- ============ SIDEBAR ============ -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="soul-logo">
+                    <img src="{{ url_for('static', filename='soul-avatar.png') }}" class="sidebar-logo-img" alt="SOUL">
+                    <span class="logo-text">SOUL</span>
+                </div>
+                <button id="closeSidebar" class="icon-btn mobile-only"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <button id="newChatBtn" class="new-chat-btn">
+                <i class="fa-solid fa-plus"></i> New Chat
+            </button>
+
+            <!-- Chat History -->
+            <div class="sidebar-section history-section">
+                <p class="sidebar-label"><i class="fa-solid fa-clock-rotate-left"></i> Recent Chats</p>
+                <div id="historyList" class="history-list">
+                    <p class="empty-history" id="emptyHistory">No conversations yet. Start chatting!</p>
+                </div>
+            </div>
+
+            <!-- Quick Topics -->
+            <div class="sidebar-section">
+                <p class="sidebar-label"><i class="fa-solid fa-sparkles"></i> Quick Topics</p>
+                <button class="sidebar-chip" data-question="What is Artificial Intelligence?">
+                    <i class="fa-solid fa-brain"></i> Artificial Intelligence
+                </button>
+                <button class="sidebar-chip" data-question="What is Machine Learning?">
+                    <i class="fa-solid fa-diagram-project"></i> Machine Learning
+                </button>
+                <button class="sidebar-chip" data-question="What is Generative AI?">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Generative AI
+                </button>
+                <button class="sidebar-chip" data-question="What is Agentic AI?">
+                    <i class="fa-solid fa-robot"></i> Agentic AI
+                </button>
+                <button class="sidebar-chip" data-question="What are the CodeAlpha internship tasks?">
+                    <i class="fa-solid fa-briefcase"></i> Internship Tasks
+                </button>
+            </div>
+
+            <div class="sidebar-footer">
+                <p>Made with <i class="fa-solid fa-heart"></i> by Naveed Gurmani</p>
+                <p class="sidebar-sub">CodeAlpha AI Internship — Task 2</p>
+            </div>
+        </aside>
+
+        <!-- ============ MAIN CHAT AREA ============ -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <button id="openSidebar" class="icon-btn mobile-only"><i class="fa-solid fa-bars"></i></button>
+                <div class="topbar-title">
+                    <span>SOUL</span>
+                    <span class="topbar-sub">AI & Internship Knowledge Assistant</span>
+                </div>
+                <button id="themeToggle" class="icon-btn"><i class="fa-solid fa-sun"></i></button>
+            </header>
+
+            <div class="chat-window" id="chatWindow">
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="hero-orb-wrap">
+                        <img src="{{ url_for('static', filename='soul-avatar.png') }}" class="hero-orb-img" alt="SOUL">
+                    </div>
+                    <h1>Hi, I'm <span class="gradient-text">SOUL</span></h1>
+                    <p>Your AI companion for Artificial Intelligence concepts & the CodeAlpha internship journey.</p>
+
+                    <div class="suggestion-grid" id="suggestionGrid"></div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-bar">
+                    <button id="micBtn" class="icon-btn mic-btn" title="Voice input">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                    <textarea id="userInput" placeholder="Ask SOUL about AI, ML, or CodeAlpha internship..." rows="1"></textarea>
+                    <button id="sendBtn" class="send-btn" title="Send">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+                <p class="input-hint">SOUL uses TF-IDF & Cosine Similarity to understand your questions.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
