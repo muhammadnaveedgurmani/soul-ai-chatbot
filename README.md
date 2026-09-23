@@ -21,6 +21,10 @@ A next-generation, futuristic AI chatbot that answers questions about **Artifici
 - ✨ Animated particle background + glowing orb avatar
 - 📱 Fully responsive with mobile sidebar
 
+## 📸 Preview
+
+![SOUL chatbot](screenshot.png)
+
 ## 🛠️ Tech Stack
 - **Backend**: Python, Flask
 - **AI/ML**: Scikit-learn (TfidfVectorizer, Cosine Similarity)
