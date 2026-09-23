@@ -1,5 +1,13 @@
 # 🔮 SOUL — AI & Internship Knowledge Assistant
 
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+
+</div>
+
 A next-generation, futuristic AI chatbot that answers questions about **Artificial Intelligence concepts** (Machine Learning, Deep Learning, Generative AI, Agentic AI, NLP, etc.) and the **CodeAlpha Internship Program**. Built as **Task 2** of the CodeAlpha AI Internship.
 
 ## ✨ Features
